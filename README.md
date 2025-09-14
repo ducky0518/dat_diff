@@ -49,7 +49,7 @@ pip install customtkinter
 
 ## ▶️ Usage
 
-### Run the app
+### Run the app (just double click the .exe if using the stanadone from the releases section)
 ```bash
 python dat_diff.py
 ```
