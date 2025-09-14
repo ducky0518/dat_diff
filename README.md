@@ -22,7 +22,13 @@
   - **Copy to Clipboard** and **Export to CSV** actions
 
 ---
+## Screenshots
 
+![image](dat_diff_summary.png)
+![image](dat_diff_roms.png)
+
+
+---
 ## 📦 Installation
 
 ### Prerequisites
@@ -89,15 +95,3 @@ Quick loads don’t create a profile; they are used for the current session only
 
 **Why do some byte totals show “Unknown”?**  
 Some entries (e.g., CHD `<disk>` elements) may not include `size`; totals become “Unknown” when sizes are absent.
-
----
-
-## 📝 License
-
-Choose a license (e.g., MIT) and place it here.
-
----
-
-## 🙌 Acknowledgements
-
-Built with **CustomTkinter** and Python’s standard library.
