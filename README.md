@@ -1,4 +1,4 @@
-# DAT Diff (by -God-like)
+# DAT Diff
 
 `DAT Diff` is a desktop GUI app for comparing two DAT/XML files used by ROM managers (e.g., ClrMAMEPro, RomVault). It shows what games/ROMs were **added**, **removed**, or **changed** (size/checksums), along with side-by-side metadata and dataset stats.
 
