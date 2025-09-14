@@ -31,6 +31,10 @@
 ---
 ## 📦 Installation
 
+### Pre-built standalone Windows binary
+- Download this from the releases section
+- No prereqs or dependencies
+  
 ### Prerequisites
 - Python 3.x with Tkinter available (Tkinter ships with standard CPython installers on Windows/macOS; on some Linux distros you may need to install `python3-tk`).
 
