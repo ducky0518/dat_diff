@@ -99,3 +99,9 @@ Quick loads don’t create a profile; they are used for the current session only
 
 **Why do some byte totals show “Unknown”?**  
 Some entries (e.g., CHD `<disk>` elements) may not include `size`; totals become “Unknown” when sizes are absent.
+
+**What is the point of the profiles?**
+Profiles, which are optional, let you save commonly used source DAT files so you don’t have to reselect them each time. A profile stores the file path (and, if needed, the specific DAT inside a ZIP). Once saved, you can quickly reload that DAT for future comparisons, rename or organize profiles, and manage them in bulk.
+
+**Can the Profile Manager bulk-add multiple DATs from inside a ZIP?**
+Yes. When you select a ZIP file, the app will let you choose which DAT/XML files inside to add. You can pick them manually, use Select All, or Deselect All as needed.
