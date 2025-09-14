@@ -55,18 +55,27 @@ python dat_diff.py
 ```
 
 ### Typical workflow
+
 1. **Pick a Source**  
-   - Choose an existing **profile** from the dropdown, **or** click **Quick Load Source DAT** to select a one-off DAT/XML/ZIP/GZ.
+   - **First-time users:** you have two ways to start:  
+     - Use **Quick Load Source DAT** to immediately load a DAT/XML/ZIP/GZ file for a one-time comparison.  
+     - Or, open the **Profile Manager** to add a new source DAT as a saved profile for easy reuse.  
+   - **Returning users:** you can either select a saved profile from the dropdown **or** use **Quick Load Source DAT** again if you just want a one-off.  
+
 2. **Compare to a Target**  
-   - Click **Compare Another DAT…** and select the target file (supports picking inside ZIPs when multiple matching files exist).
-3. **Review results**
-   - **Summary**: side-by-side metadata, dataset counts (games/ROMs/bytes), and byte delta stats.
-   - **Games**: Added / Removed lists.
-   - **ROMs**: Added / Removed / Changed with sizes + CRC/MD5/SHA1.
-4. **Work with tables**
-   - Click column headers to sort; numeric columns sort numerically.
-   - Use **Columns** to toggle visible columns (ROM tables). Preferences persist in `ui_prefs.json`.
-   - **Copy to Clipboard** or **Export to CSV** directly from each header.
+   - Click **Compare Another DAT…** and select the target file.  
+   - If the target is a ZIP containing multiple DAT/XML files, you’ll be prompted to choose which one.  
+
+3. **Review results**  
+   - **Summary tab**: side-by-side metadata, dataset counts (games/ROMs/bytes), and total byte delta stats.  
+   - **Games tab**: lists of games that were added or removed.  
+   - **ROMs tab**: detailed lists of ROMs that were added, removed, or changed (size + CRC/MD5/SHA1).  
+
+4. **Work with tables**  
+   - Click column headers to sort; numeric columns sort numerically.  
+   - Use **Columns** to show/hide specific columns (settings are saved in `ui_prefs.json`).  
+   - Use **Copy to Clipboard** or **Export to CSV** from each table’s header for sharing or analysis.  
+
 
 ---
 
