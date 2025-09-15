@@ -1012,9 +1012,20 @@ class DiffApp(ctk.CTk):
     def _tree_get_visible_columns(self, tree: ttk.Treeview, all_cols: List[str]) -> List[str]:
         """Return the columns currently visible for a tree, preserving order."""
         dc = tree.cget("displaycolumns")
-        if not dc or dc == "#all":
+        # If nothing set or Tk is indicating "all" columns, return all
+        if not dc:
             return list(all_cols)
-        return [*dc]
+        # dc might be "#all" (str) or ("#all",) (tuple) depending on platform/Tk
+        if (isinstance(dc, str) and dc == "#all") or (isinstance(dc, (list, tuple)) and len(dc) == 1 and dc[0] == "#all"):
+            return list(all_cols)
+        # Convert any Tk sequence to a Python list of strings
+        try:
+            seq = list(dc)
+        except Exception:
+            return list(all_cols)
+        # Filter out any stray sentinel values just in case
+        return [c for c in seq if c in all_cols]
+
 
     def _iter_tree_rows(self, tree: ttk.Treeview):
         """Yield each row's tuple(values)."""
@@ -1053,7 +1064,7 @@ class DiffApp(ctk.CTk):
 
 
     def _copy_tree_to_clipboard(self, tree: ttk.Treeview, all_cols: List[str]):
-        cols = self._tree_get_visible_columns(tree, all_cols)
+        cols = [c for c in self._tree_get_visible_columns(tree, all_cols) if c in all_cols]
         lines = ["\t".join(cols)]
         idx_map = {c: all_cols.index(c) for c in cols}
         count = 0
@@ -1075,7 +1086,7 @@ class DiffApp(ctk.CTk):
             self._error(f"Clipboard failed: {e}")
 
     def _export_tree_to_csv(self, tree: ttk.Treeview, all_cols: List[str], default_basename: str):
-        cols = self._tree_get_visible_columns(tree, all_cols)
+        cols = [c for c in self._tree_get_visible_columns(tree, all_cols) if c in all_cols]
         path = filedialog.asksaveasfilename(
             title="Export to CSV",
             defaultextension=".csv",
@@ -1788,3 +1799,4 @@ if __name__ == "__main__":
             args.log_level, args.log_file, args.log_stderr
         )
     main()
+
